@@ -7,17 +7,17 @@
 </h3>
 
 <p align="center">
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/anacleto241/sistemaControleDespesas">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/generoso28/filaAtendimentoModelo">
   
-  <a href="https://github.com/anacleto241/sistemaControleDespesas/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/anacleto241/sistemaControleDespesas">
+  <a href="https://github.com/generoso28/filaAtendimentoModelo/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/generoso28/filaAtendimentoModelo">
   </a>
     
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
    <a href="https://github.com/anacleto241/sistemaControleDespesas/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/anacleto241/sistemaControleDespesas?style=social">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/generoso28/filaAtendimentoModelo?style=social">
   </a>
-    <img alt="Feito por Generoso e Anacleto" src="https://img.shields.io/badge/feito%20por-Generoso e Anacleto-%237519C1">
+    <img alt="Feito por Generoso" src="https://img.shields.io/badge/feito%20por-Generoso-%237519C1">
   </a> 
  
 </p>
