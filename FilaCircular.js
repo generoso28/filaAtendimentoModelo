@@ -11,7 +11,7 @@ class FilaCircular{
     }
   //-------------------------------
     enqueue(elemento){
-        if(!this.isFull){
+        if(!(this.qtd === this.elementos.length)){
             if(this.fim === this.elementos.length-1)
                 this.fim = 0;
             else

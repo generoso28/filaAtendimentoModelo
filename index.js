@@ -3,25 +3,67 @@
 
  // Função para adicionar um elemento à fila
  function adicionarElemento() {
-     
+    const txtnovoNome = document.getElementById("txtnovoNome");
+    const txtnovoCpf = document.getElementById("txtnovoCpf");
+    const novoNome = txtnovoNome.value;
+    const novoCpf = txtnovoCpf.value;
+    const dataAtual = obterDataAtual();
+    const horaAtual = obterHoraAtual();
+    const atendimento = new Atendimento(novoNome, novoCpf, dataAtual, horaAtual);
+    if(minhaFila.enqueue(atendimento)===true){
+      atualizarFila();
+      alert("Atendimento adicionado com sucesso")
+      txtnovoCpf.value="";
+      txtnovoNome.value="";
+    }else if(minhaFila.isFull()){
+      alert("Fila cheia");
+    }else{
+      alert("Erro ao adicionar elemento");
+    }
  }
 //--------------------------------------------------------------------------------------------
  // Função para remover o primeiro elemento da fila
  function removerElemento() {
+    if(!minhaFila.isEmpty()){
+      let removido = minhaFila.dequeue();
+      mostrarMensagemRemocao(removido);
+      console.log(minhaFila.toString());
+      }else
+          alert("Fila vazia");
+      atualizarFila();
  
  }
  //--------------------------------------------------------------------------------
  function buscarCpf() {
-    
+    const cpf = document.getElementById("txtnovoCpf");
+    const cpfBusca = cpf.value;
+    let atendimento = null;
+    for (let i = 0; i < minhaFila.qtd; i++) {
+      if (minhaFila.elementos[i].cpf === cpfBusca) {
+        atendimento = minhaFila.elementos[i];
+        break;
+      }
+    }
+    if (atendimento !== null) {
+      alert(`Atendimento encontrado: ${atendimento.toString()}`);
+    } else {
+      alert("Atendimento não encontrado");
+    }
 }
 //--------------------------------------------------------------------------------------------
 function mostrarMensagemRemocao(pessoaAtendida) {
-    
+  document.getElementById("mensagem-remocao").textContent = `Atendimento realizado: ${pessoaAtendida} \n Atendimento realizado às: ${obterHoraAtual()} \n Duração do atendimento: ${calcularDiferencaHoras(pessoaAtendida.hora, obterHoraAtual())}`;
 }
 //--------------------------------------------------------------------------------------------
  // Função para atualizar a exibição da fila
  function atualizarFila() {
-     
+    const listaFila = document.getElementById("listFila");
+    listaFila.textContent = minhaFila.toString();
+    document.querySelector("#listFila").innerHTML = "";
+    for(let item of minhaFila){
+      console.log(item.toString());
+      document.querySelector("#listFila").innerHTML += `<li>${item.toString()}</li>`;
+    }
   }
 //--------------------------------------------------------------------------------------------
  // funcao data
